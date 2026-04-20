@@ -1,1 +1,9 @@
-# tcm26sibdg05
+# Relatório de Especificação da Informação
+ 
+“VetPet”
+O projeto consiste na especificação e desenvolvimento do sistema VetPet, uma aplicação de gestão para uma clínica veterinária. O principal objetivo é melhorar a organização interna da clínica e otimizar processos de registo, agendamento e gestão de serviços, permitindo automatizar tarefas, reduzir erros e garantir um controlo mais eficiente dos atendimentos e tratamentos realizados.
+Atualmente, muitas clínicas utilizam processos manuais ou sistemas que dificultam o acompanhamento do histórico dos animais. Cada cliente pode ter vários animais, e cada animal pode necessitar de múltiplos serviços ao longo do tempo, o que torna essencial um sistema que permita consultar rapidamente e de forma eficiente a informação e histórico clínico e os agendamentos.
+O sistema VetPet permitirá o cadastro de clientes (nome, nif, telefone, email, morada) e de animais (nome, espécie, raça, ano de nascimento, sexo, dono). Será possível registar veterinários com as respetivas especialidades e contactos, agendar consultas associadas a um animal e a um veterinário, e registar tratamentos realizados em cada consulta. O estado das consultas será controlado por um campo com valores pré-definidos (por exemplo: Agendada, Em_Curso, Concluída, Cancelada) para evitar entradas inválidas.
+Para facilitar a operação diária, será criada uma vista que apresenta as consultas do dia, mostrando o nome do animal, o nome do dono e a hora da consulta, o que ajuda a receção a gerir o fluxo de atendimentos. Haverá também relatórios por veterinário e um histórico detalhado por animal, onde ficarão registadas todas as intervenções, medicações e observações clínicas.
+
+Em conclusão, o VetPet propõe uma solução integrada para gerir clientes, animais, veterinários, consultas e tratamentos numa clínica veterinária, centralizando informação e reduzindo erros associados a processos manuais. A vista das consultas do dia e os relatórios por veterinário tornam a operação diária mais eficiente, enquanto a documentação e os testes garantem a fiabilidade da solução.

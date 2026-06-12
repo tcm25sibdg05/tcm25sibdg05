@@ -255,3 +255,4 @@ INSERT INTO Registo_Tratamento (notas_clinicas, id_animal, id_acao, id_consulta)
 ('Consulta dermatológica de controlo.', 15, 1, 15),
 ('Vacinação obrigatória administrada.', 17, 3, 17),
 ('Avaliação de claudicação membro posterior direito.', 21, 1, 21);
+

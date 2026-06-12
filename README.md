@@ -10,6 +10,5 @@ Atualmente, a gestão manual ou em sistemas isolados de um grande volume de info
 - Catarina Carrasqueiro (A046864)
 - Inês Marques (A046573)
 - Rita Pereira (A046556)
-----
 
 

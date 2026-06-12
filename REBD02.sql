@@ -1,8 +1,3 @@
-# SQL (DDL & DML)
-
-## DDL
-
-```sql
 CREATE DATABASE IF NOT EXISTS vetpet;
 USE `vetpet`;
 
@@ -43,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `Veterinario` (
 
 CREATE TABLE IF NOT EXISTS `Acao_Medica` (
     `id_acao` INT AUTO_INCREMENT PRIMARY KEY,
+    `descricao` VARCHAR(100) NOT NULL,
     `preco` DECIMAL(10,2) NOT NULL
 );
 
@@ -67,16 +63,6 @@ CREATE TABLE IF NOT EXISTS `Registo_Tratamento` (
     FOREIGN KEY (`id_acao`) REFERENCES `Acao_Medica`(`id_acao`),
     FOREIGN KEY (`id_consulta`) REFERENCES `Consulta`(`id_consulta`)
 );
-
-```
-
----
-
-## DML
-
-### Inserts (exemplos)
-
-```sql
 
 INSERT INTO Cliente (nome, nif, telefone, email, morada) VALUES 
 ('Margarida Sousa', '234567890', '912345678', 'margarida.sousa@mail.com', 'Rua Central, 123, Maia'),
@@ -131,14 +117,80 @@ INSERT INTO Animal (nome, especie, raca, ano_nascimento, sexo, estado_saude, id_
 ('Duke', 'Cão', 'Golden Retriever', 2020, 'M', 'Saudável', 18),
 ('Chloe', 'Gato', 'Sphynx', 2023, 'F', 'Saudável', 19),
 ('Bolinha', 'Hamster', 'Sírio', 2023, 'F', 'Saudável', 20),
-('Zeus', 'Cão', 'Rottweiler', 2017, 'M','Saudável', 21);
+('Zeus', 'Cão', 'Rottweiler', 2017, 'M','Saudável', 21),
+('Buster', 'Cão', 'Dálmata', 2021, 'M', 'Saudável', 22),
+('Minnie', 'Gato', 'Siamês', 2018, 'F', 'Saudável', 23),
+('Pipo', 'Cão', 'Bichon Frisé', 2020, 'M', 'Problemas Digestivos', 24),
+('Faísca', 'Cão', 'Pinscher', 2022, 'M', 'Saudável', 25),
+('Mia', 'Gato', 'Maine Coon', 2019, 'F', 'Obeso', 26),
+('Tico', 'Coelho', 'Anão', 2023, 'M', 'Saudável', 27),
+('Teco', 'Coelho', 'Anão', 2023, 'M', 'Saudável', 28),
+('Lassie', 'Cão', 'Collie', 2017, 'F', 'Problemas Digestivos', 29),
+('Tareco', 'Gato', 'Comum Europeu', 2016, 'M', 'Obeso', 30);
 
 INSERT INTO Veterinario (nome, especialidade, contacto) VALUES 
 ('Dr. João Almeida', 'Nutrição Veterinária', '933445566'),
 ('Dra. Sara Mendes', 'Cirurgia Geral', '911223344'),
 ('Dr. Tiago Faria', 'Medicina Interna', '966778899'),
 ('Dra. Beatriz Costa', 'Dermatologia', '922334455'),
-('Dr. Carlos Silva', 'Animais Exóticos', '933887766');
+('Dr. Carlos Silva', 'Animais Exóticos', '933887766'),
+('Dr. Rui Santos', 'Cardiologia', '912345001'),
+('Dra. Ana Silva', 'Odontologia', '912345002'),
+('Dr. Pedro Faria', 'Oncologia', '912345003'),
+('Dra. Maria João', 'Medicina Interna', '912345004'),
+('Dr. Ricardo Matos', 'Cirurgia Ortopédica', '912345005'),
+('Dra. Sofia Lemos', 'Neurologia', '912345006'),
+('Dr. Miguel Sousa', 'Comportamento Animal', '912345007'),
+('Dra. Laura Pinto', 'Dermatologia', '912345008'),
+('Dr. Nuno Carvalho', 'Animais Exóticos', '912345009'),
+('Dra. Joana Ribeiro', 'Oftalmologia', '912345010'),
+('Dr. Tiago Oliveira', 'Fisioterapia', '912345011'),
+('Dra. Inês Costa', 'Nutrição Veterinária', '912345012'),
+('Dr. Hugo Teixeira', 'Cirurgia Geral', '912345013'),
+('Dra. Marta Pires', 'Medicina Felina', '912345014'),
+('Dr. Gonçalo Rocha', 'Urgências', '912345015'),
+('Dra. Rita Marques', 'Anestesiologia', '912345016'),
+('Dr. Filipe Neves', 'Medicina Interna', '912345017'),
+('Dra. Diana Machado', 'Imagiologia', '912345018'),
+('Dr. Tomás Gomes', 'Oncologia', '912345019'),
+('Dra. Carolina Pinto', 'Cardiologia', '912345020'),
+('Dr. Bruno Castro', 'Odontologia', '912345021'),
+('Dra. Andreia Lopes', 'Cirurgia Geral', '912345022'),
+('Dr. Diogo Ferreira', 'Animais Exóticos', '912345023'),
+('Dra. Catarina Lima', 'Urgências', '912345024'),
+('Dr. João Rodrigues', 'Dermatologia', '912345025');
+
+INSERT INTO Acao_Medica (descricao, preco) VALUES 
+('Consulta de Rotina', 35.00),
+('Consulta de Nutrição', 40.00),
+('Vacinação Anual', 25.00),
+('Desparasitação Interna', 15.00),
+('Desparasitação Externa', 18.00),
+('Ecografia Abdominal', 60.00),
+('Raio-X', 55.00),
+('Análises Sanguíneas', 45.00),
+('Destartarização', 80.00),
+('Castração (Cão)', 120.00),
+('Esterilização (Cadela)', 180.00),
+('Castração (Gato)', 70.00),
+('Esterilização (Gata)', 130.00),
+('Limpeza de Ouvidos', 15.00),
+('Corte de Unhas', 10.00),
+('Curativo Simples', 20.00),
+('Cirurgia de Tecidos Moles', 250.00),
+('Cirurgia Ortopédica', 450.00),
+('Internamento (Dia)', 50.00),
+('Aplicação de Microchip', 25.00),
+('Emissão de Passaporte', 30.00),
+('Consulta de Urgência', 70.00),
+('Sessão de Fisioterapia', 40.00),
+('Eletrocardiograma (ECG)', 50.00),
+('Biópsia', 85.00),
+('Citologia', 35.00),
+('Fluidoterapia', 25.00),
+('Teste Rápido Leishmaniose', 22.00),
+('Teste Rápido FIV/FeLV', 28.00),
+('Extração Dentária', 45.00);
 
 INSERT INTO Consulta (estado_consulta, data_consulta, hora_consulta, id_animal, id_veterinario) VALUES 
 ('Concluída', '2026-05-02', '10:30:00', 1, 1),
@@ -203,30 +255,3 @@ INSERT INTO Registo_Tratamento (notas_clinicas, id_animal, id_acao, id_consulta)
 ('Consulta dermatológica de controlo.', 15, 1, 15),
 ('Vacinação obrigatória administrada.', 17, 3, 17),
 ('Avaliação de claudicação membro posterior direito.', 21, 1, 21);
-```
-
-### Consultas (exemplos)
-
-```sql
-
-SELECT c.hora_consulta, a.nome AS paciente, cl.nome AS dono, v.nome AS medico, c.estado_consulta
-FROM Consulta c
-JOIN Animal a ON c.id_animal = a.id_animal
-JOIN Cliente cl ON a.id_cliente = cl.id_cliente
-JOIN Veterinario v ON c.id_veterinario = v.id_veterinario
-WHERE c.data_consulta = '2026-05-20' AND c.estado_consulta = 'Agendada'
-ORDER BY c.hora_consulta ASC;
-
-SELECT rt.notas_clinicas, am.descricao AS tratamento, am.preco, c.data_consulta
-FROM Registo_Tratamento rt
-JOIN Acao_Medica am ON rt.id_acao = am.id_acao
-JOIN Consulta c ON rt.id_consulta = c.id_consulta
-WHERE rt.id_animal = 1
-ORDER BY c.data_consulta DESC;
-
-SELECT a.nome AS animal, a.estado_saude, cl.nome AS dono, cl.telefone
-FROM Animal a
-JOIN Cliente cl ON a.id_cliente = cl.id_cliente
-WHERE a.estado_saude IN ('Obeso', 'Problemas Digestivos');
-
-```

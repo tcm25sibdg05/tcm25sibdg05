@@ -11,8 +11,8 @@ Atualmente, a gestão manual ou em sistemas isolados de um grande volume de info
 * **Relatórios:** A documentação de modelação encontra-se na pasta `doc/`.
 
 ## Relatórios
-:[REI - Relatório de Especificação e Implementação](doc/rei/REI00.md)
-:[REBD - Relatório de Especificação da Base de Dados](doc/rebd/REBD00.md)
+* [REI - Relatório de Especificação e Implementação](doc/rei/REI00.md)
+* [REBD - Relatório de Especificação da Base de Dados](doc/rebd/REBD00.md)
 
 ## Grupo 05
 * Rita Pereira [@ritapereira00](https://github.com/ritapereira00)

@@ -1,3 +1,8 @@
+# SQL
+
+## DDL
+
+```sql
 CREATE DATABASE IF NOT EXISTS vetpet;
 USE `vetpet`;
 
@@ -63,7 +68,12 @@ CREATE TABLE IF NOT EXISTS `Registo_Tratamento` (
     FOREIGN KEY (`id_acao`) REFERENCES `Acao_Medica`(`id_acao`),
     FOREIGN KEY (`id_consulta`) REFERENCES `Consulta`(`id_consulta`)
 );
+```
 
+## DML
+
+```sql
+--Inserir novos Clientes
 INSERT INTO Cliente (nome, nif, telefone, email, morada) VALUES 
 ('Margarida Sousa', '234567890', '912345678', 'margarida.sousa@mail.com', 'Rua Central, 123, Maia'),
 ('Rui Pedro', '214567891', '913456789', 'ruipedro@mail.com', 'Avenida Visconde de Barreiros, Maia'),
@@ -96,6 +106,7 @@ INSERT INTO Cliente (nome, nif, telefone, email, morada) VALUES
 ('Rita Marques', '284567818', '965678901', 'rita.marques@mail.com', 'Rua Henrique Medina, Maia'),
 ('Tiago Correia', '294567819', '966789012', 'tiago.correia@mail.com', 'Largo da Igreja, Maia');
 
+--Inserir novos Animais
 INSERT INTO Animal (nome, especie, raca, ano_nascimento, sexo, estado_saude, id_cliente) VALUES 
 ('Bobby', 'Cão', 'Labrador', 2019, 'M', 'Obeso', 1),
 ('Luna', 'Gato', 'Siamês', 2021, 'F', 'Saudável', 2),
@@ -128,6 +139,7 @@ INSERT INTO Animal (nome, especie, raca, ano_nascimento, sexo, estado_saude, id_
 ('Lassie', 'Cão', 'Collie', 2017, 'F', 'Problemas Digestivos', 29),
 ('Tareco', 'Gato', 'Comum Europeu', 2016, 'M', 'Obeso', 30);
 
+--Inserir novos Veterinarios
 INSERT INTO Veterinario (nome, especialidade, contacto) VALUES 
 ('Dr. João Almeida', 'Nutrição Veterinária', '933445566'),
 ('Dra. Sara Mendes', 'Cirurgia Geral', '911223344'),
@@ -160,6 +172,7 @@ INSERT INTO Veterinario (nome, especialidade, contacto) VALUES
 ('Dra. Catarina Lima', 'Urgências', '912345024'),
 ('Dr. João Rodrigues', 'Dermatologia', '912345025');
 
+--Inserir novas Acoes
 INSERT INTO Acao_Medica (descricao, preco) VALUES 
 ('Consulta de Rotina', 35.00),
 ('Consulta de Nutrição', 40.00),
@@ -192,6 +205,7 @@ INSERT INTO Acao_Medica (descricao, preco) VALUES
 ('Teste Rápido FIV/FeLV', 28.00),
 ('Extração Dentária', 45.00);
 
+--Inserir novas Consultas
 INSERT INTO Consulta (estado_consulta, data_consulta, hora_consulta, id_animal, id_veterinario) VALUES 
 ('Concluída', '2026-05-02', '10:30:00', 1, 1),
 ('Concluída', '2026-05-03', '11:00:00', 2, 3),
@@ -224,6 +238,7 @@ INSERT INTO Consulta (estado_consulta, data_consulta, hora_consulta, id_animal, 
 ('Concluída', '2026-05-06', '09:30:00', 29, 5),
 ('Cancelada', '2026-05-07', '17:00:00', 30, 1);
 
+--Inserir novos Registos
 INSERT INTO Registo_Tratamento (notas_clinicas, id_animal, id_acao, id_consulta) VALUES 
 ('Animal apresenta excesso de peso. Recomendada ração light e início de plano de emagrecimento.', 1, 2, 1),
 ('Administração da vacina anual concluída sem reações adversas.', 1, 3, 1),
@@ -256,3 +271,24 @@ INSERT INTO Registo_Tratamento (notas_clinicas, id_animal, id_acao, id_consulta)
 ('Vacinação obrigatória administrada.', 17, 3, 17),
 ('Avaliação de claudicação membro posterior direito.', 21, 1, 21);
 
+--Alterar o estado de uma consulta
+UPDATE consultas 
+SET estado_consulta = 'Concluída' 
+WHERE id = 5;
+
+--Selecionar o historico de consultas e tratamentos de um animal específico
+SELECT a.nome AS Animal, c.data_consulta, v.nome AS Veterinario, r.notas_clinicas
+FROM animais a
+JOIN consultas c ON a.id = c.id_animal
+JOIN veterinarios v ON c.id_veterinario = v.id
+JOIN registos_tratamento r ON c.id = r.id_consulta
+WHERE a.nome = 'Bobi'
+ORDER BY c.data_consulta DESC;
+
+--Calcular o valor total faturado num determinado dia
+SELECT SUM(am.preco) AS Total_Faturado
+FROM acoes_medicas am
+JOIN registos_tratamento r ON am.id = r.id_acao
+JOIN consultas c ON r.id_consulta = c.id
+WHERE c.data_consulta = '2026-06-15';
+```

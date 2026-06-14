@@ -1,6 +1,8 @@
-# Modelo Entidade-Associação
+# Esquema Conceptual 
 
-## Entidades
+## Modelo Entidade-Associação
+
+### Entidades
 
 **CLIENTE**
 Representa os proprietários dos pacientes registados na instituição.
@@ -58,7 +60,7 @@ Constitui o historial clínico pormenorizado, documentando as intervenções rea
 
 ---
 
-## Associações e Cardinalidades
+### Associações e Cardinalidades
 
 * **possui(CLIENTE, ANIMAL) (Grau 1:N)**
 Estipula que um Cliente pode possuir um ou múltiplos Animais (N), ao passo que cada Animal está estritamente associado a um único Cliente (1).

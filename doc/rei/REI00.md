@@ -2,9 +2,9 @@
 
 ## Índice
 
-* [Introdução](rei01.md)  
-* [Especificação de Requisitos](rei02.md)  
-* [Esquema Conceptual](rei03.md)  
+* [Introdução](REI01.md)  
+* [Especificação de Requisitos](REI02.md)  
+* [Esquema Conceptual](REI03.md)  
 
 ## Grupo 05
 * Rita Pereira [@ritapereira00](https://github.com/ritapereira00)

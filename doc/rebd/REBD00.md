@@ -2,8 +2,8 @@
 
 ## Índice
 
-* [Esquema Relacional](rebd01.md)  
-* [SQL](rebd02.md)  
+* [Esquema Relacional](REBD01.md)  
+* [SQL](REBD02.md)  
 
 ## Grupo 05
 * Rita Pereira [@ritapereira00](https://github.com/ritapereira00)

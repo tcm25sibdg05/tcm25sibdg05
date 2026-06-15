@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "9181d953-00e2-4f48-9c22-2a84ae5eba7a",
+    "name": "VetPet API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55872471"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Animais",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/animais",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "animais"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Veterinarios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/veterinarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "veterinarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/consultas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "consultas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Acoes medicas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/acoes-medicas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "acoes-medicas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registos tratamentos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/registos-tratamentos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "registos-tratamentos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
